@@ -10,29 +10,38 @@ function App() {
   let x;
   let time;
 
+  const styles = {
+    fontSize: 34,
+    textAlign: "center"
+  };
+
+  const timeStyles = {};
   if (hours < 12) {
     time = "Good Morning!";
+    timeStyles.color = "Red";
   } else if (hours >= 12 && hours < 17) {
     time = "Good Afternoon";
+    timeStyles.color = "Yellow";
   } else {
     time = "Good Night";
+    timeStyles.color = "Pink";
   }
 
   if (num % 2 === 0) {
     x = "The given number is even.";
   } else {
-    x = "the given number is odd.";
+    x = "The given number is odd.";
   }
 
   return (
-    <div>
+    <div style={styles}>
       <h2>Hello {firstName}</h2>
       <h3>
         Today's Date: {date1}, Day: {day}
       </h3>
-      <h3> the given num: {num}</h3>
+      <h3> The given num: {num}</h3>
       <h3>{x}</h3>
-      <h4>{time}</h4>
+      <h4 style={timeStyles}>{time}</h4>
     </div>
   );
 }
